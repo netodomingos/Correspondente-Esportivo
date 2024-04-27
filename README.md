@@ -1,25 +1,25 @@
-**Seja bem-vindo ao Correspondente Esportivo!**
+# Seja bem-vindo ao Correspondente Esportivo!
 
 Este projeto utiliza Node.js e TypeScript para buscar informações de jogos de futebol em tempo real e apresentá-las de forma formatada e amigável ao usuário.
 
-**Funcionalidades:**
+### Funcionalidades:
 
 * Exibe os times que estão jogando;
 * Mostra o placar da partida;
 * Informa o campeonato em disputa.
 
-**APIs utilizadas:**
+### APIs utilizadas:
 
-* **RapidAPI:** Obter detalhes dos jogos;
-* **Geminiai:** Formatar o texto para o prompt.
+* **[RapidAPI:](https://rapidapi.com/)** Obter detalhes dos jogos;
+* **[Geminiai:](https://geminiai.ai/)** Formatar o texto para o prompt.
 
-**Pré-requisitos:**
+### Pré-requisitos:
 
 * Node.js instalado;
 * Conta na RapidAPI;
 * Conta na Geminiai;
 
-**Instalação:**
+### Instalação:
 
 1. Clone o repositório:
 
