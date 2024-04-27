@@ -1,0 +1,21 @@
+{
+  "name": "correspondente-esportivo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "start": "npm run-script index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "compilerOptions": {
+    "module": "commonjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.8.0",
+    "@types/node": "^20.12.7",
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5"
+  }
+}
