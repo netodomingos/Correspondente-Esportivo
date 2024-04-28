@@ -1,9 +1,11 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { IMatches } from "structs/types/IMatches";
-
-const genAI = new GoogleGenerativeAI(process.env.API_GOOGLE_GENERATIVE_AI!);
+import { IMatches } from "../structs/types/IMatches";
 
 export async function handleFormatMatchesToMessage(matchesInfo: Array<IMatches> | String){
+	const genAI = new GoogleGenerativeAI(process.env.API_GOOGLE_GENERATIVE_AI!);
+
+	
+
 	if(matchesInfo !== 'Sem Eventos Hoje :/') {
 		const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro-latest"});
 

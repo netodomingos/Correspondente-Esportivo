@@ -4,5 +4,6 @@ declare namespace NodeJs {
         API_FOOTBALL_KEY: string,
         API_FOOTBALL_URL: string,
         DISCORD_TOKEN: string,
+        CHANNEL_ID:string
     }
 }

@@ -1,5 +1,5 @@
 import axios from "axios";
-import percorrerEventos from "utils/MapEvents";
+import percorrerEventos from "../utils/MapEvents";
 
 export async function handleGetInLiveMatchsInformation(){
 	const options = {
