@@ -1,4 +1,5 @@
 import dotenv from 'dotenv'
+import schedule from 'node-schedule';
 
 import { handleGetInLiveMatchsInformation } from './modules/GettingLiveMatches';
 import { handleFormatMatchesToMessage } from './modules/FormatMatchesToMessage';
@@ -12,4 +13,8 @@ async function sportsFactory(){
 	discordMessage(matchesFormated)
 }
 
-sportsFactory()
+const rules = new schedule.RecurrenceRule();
+rules.hour = 8; 
+rules.minute = 0; 
+
+schedule.scheduleJob(rules, sportsFactory);

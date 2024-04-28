@@ -134,15 +134,3 @@ export interface IEvent {
     code: string;
     flag?: string;
   }
-  interface ResultSet {
-    count: number;
-    competitions: string;
-    first: string;
-    last: string;
-    played: number;
-  }
-  interface Filters {
-    dateFrom: string;
-    dateTo: string;
-    permission: string;
-  }

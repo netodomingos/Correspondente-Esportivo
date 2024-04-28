@@ -10,8 +10,9 @@ export async function handleFormatMatchesToMessage(matchesInfo: Array<IMatches> 
 		const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro-latest"});
 
 		const prompt = `voce vai receber essa informacao ${JSON.stringify(matchesInfo)}, 
-			vai separar entre competicoes, dividindo entre competicoes principais (brasil, englaterra, espanha, champions league) 
+			vai separar entre competicoes, dividindo entre competicoes principais (brasil, englaterra, alemanha, espanha, champions league) 
 			e outras competicoes (todo o resto), adicione alguns icones de pais ao lado dos nomes da competicao, 
+			coloque o horario ao lado do confronto,
 			pois o texto será digitado no discord e o texto deve ter no maximo 4000 caracteres
 			caso passe, retire algumas competicoes menos importantes e textos desnecessários`
 
