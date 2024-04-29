@@ -9,6 +9,8 @@ Este projeto utiliza Node.js e TypeScript para buscar informações de jogos de 
 * Exibe os jogos do Dia;
 * Separa em Principais competições & Outros Campeonatos;
 * Mostra os Horários dos jogos;
+* Mostra os Possiveis canais de Streaming dos jogos;
+* Mostra as Possiveis transmissões em canais não-oficiais;
 
 ### APIs utilizadas:
 
