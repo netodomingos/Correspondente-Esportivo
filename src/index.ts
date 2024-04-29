@@ -1,24 +1,26 @@
 import dotenv from 'dotenv';
-import schedule from 'node-schedule';
-import { handleGetInLiveMatchsInformation } from './modules/GettingLiveMatches';
-import { handleFormatMatchesToMessage } from './modules/FormatMatchesToMessage';
-import { discordMessage } from './modules/DiscordMessage';
+import { 
+    ScheduleJob,
+    discordMessage,
+    handleFormatMatchesToMessage, 
+    handleGetInLiveMatchsInformation, 
+    handleSearchStreamingLinks
+} from './modules';
 
 dotenv.config();
+
+
 
 async function sportsFactory() {
     try {
         const matchesInfo = await handleGetInLiveMatchsInformation();	
-        const matchesFormated = await handleFormatMatchesToMessage(matchesInfo);
-        discordMessage(matchesFormated);
-        console.log('Sports update sent successfully.'); // Logging for verification
+        const formatMatchesText = await handleFormatMatchesToMessage(matchesInfo);
+        const matchesStreamingLinks = await handleSearchStreamingLinks(formatMatchesText)
+        discordMessage(formatMatchesText);
+        discordMessage(matchesStreamingLinks);
     } catch (error) {
-        console.error('Error occurred while sending sports update:', error); // Logging error
+        discordMessage('Estou com dificuldades de encontrar as partidas :/');
     }
 }
 
-const rule = new schedule.RecurrenceRule();
-rule.hour = 8;
-rule.minute = 0;
-
-schedule.scheduleJob(rule, sportsFactory);
+ScheduleJob(sportsFactory)
