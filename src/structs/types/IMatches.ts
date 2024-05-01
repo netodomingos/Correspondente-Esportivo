@@ -4,4 +4,10 @@ export interface IMatches {
     jogo: string,
     mandante: string,
     horario: string,
+    flag?: string
+}
+
+export interface DividedMatches {
+    mainCompetitions:  Array<IMatches>;
+    otherCompetitions:  Array<IMatches>
 }

@@ -2,9 +2,9 @@ import dotenv from 'dotenv';
 import { 
     ScheduleJob,
     discordMessage,
-    handleFormatMatchesToMessage, 
-    handleGetInLiveMatchsInformation, 
-    handleSearchStreamingLinks
+    handleGetInLiveMatchsInformation,
+    FormatedFactory, 
+    handleSearchStreamingLinks,
 } from './modules';
 
 dotenv.config();
@@ -12,10 +12,14 @@ dotenv.config();
 async function sportsFactory() {
     try {
         const matchesInfo = await handleGetInLiveMatchsInformation();	
-        const formatMatchesText = await handleFormatMatchesToMessage(matchesInfo);
-        const matchesStreamingLinks = await handleSearchStreamingLinks(formatMatchesText)
-        discordMessage(formatMatchesText);
-        discordMessage(matchesStreamingLinks);
+        if(matchesInfo !== "Sem Eventos Hoje :/"){
+            const competitions = await FormatedFactory(matchesInfo)
+            discordMessage(competitions);
+            const streamingLinks = await handleSearchStreamingLinks(competitions)
+            discordMessage(streamingLinks);
+        } else {
+            discordMessage(matchesInfo);
+        }
     } catch (error) {
         discordMessage('Estou com dificuldades de encontrar as partidas :/');
     }
