@@ -1,6 +1,6 @@
 # Seja bem-vindo ao Correspondente Esportivo!
 
-[![version](https://shields.io/badge/version-1.0.1-green)](https://choosealicense.com/licenses/mit/)
+[![version](https://shields.io/badge/version-1.0.2-green)](https://choosealicense.com/licenses/mit/)
 
 Este projeto utiliza Node.js e TypeScript para buscar informações de jogos de futebol em tempo real e apresentá-las de forma formatada e amigável aos usuários de canais no Discord.
 
